@@ -10,7 +10,7 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(server_port, function () {
+server.listen(server_port, server_ip_address, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
   
