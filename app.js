@@ -5,9 +5,12 @@ var builder = require('botbuilder');
 // Bot Setup
 //=========================================================
 
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
+server.listen(server_port, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
   
